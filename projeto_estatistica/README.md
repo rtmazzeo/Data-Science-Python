@@ -1,62 +1,110 @@
 # O Projeto
-Projeto de Análise Exploratória de Dados resultado do 1º Hackathon da Formação Completa em Ciência de Dados do Anwar Hermuche. O objetivo foi promover o desenvolvimento dos alunos em relação aos aspectos fundamentais de uma EDA. O dataset utilizado foi de um conjunto de imóveis e algumas de suas características, como valor do aluguel, condomínio, se aceita pets etc. Tínhamos que, obrigatoriamente, responder 18 perguntas levantadas pelo Anwar. Ele pontuou quatro critérios de avaliação: (i) Qualidade e Profundidade da Análise de Dados, (ii) Criatividade, (iii) Apresentação e Visualização de Dados, (iv) Aplicabilidade e Relevância no Mundo Real. 
+Projeto de Análise Exploratória de Dados resultado do Módulo de Estatística do Bootcamp "Vem Ser Tech - Dados" - Ifood. O objetivo foi promover o desenvolvimento dos alunos em relação aos aspectos fundamentais de uma EDA. O dataset utilizado foi de um conjunto de informações resumidas sobre o número de voos pontuais, atrasados, cancelados e desviados aparecem no Relatório Mensal do Consumidor de Viagens Aéreas [https://www.kaggle.com/datasets/giovamata/airlinedelaycauses](https://www.kaggle.com/datasets/giovamata/airlinedelaycauses). Tinhamos que (i) Realizar uma análise descritiva por completo da base (Variáveis discretas e contínuas); (ii) Avaliar a distribuição de probabilidade de variáveis contínuas. Abordando os seguinte critérios: 
+(i) Qualidade e Profundidade da Análise de Dados, (ii) Criatividade, (iii) Apresentação e Visualização de Dados. 
 
 # O Dataset
-Foram avaliados 10.692 imóveis e 13 features: cidade, área, cômodos, banheiros, vagas de garagem, andares, se aceita animais, se é mobiliado, valor do condomínio, valor do aluguel, valor do imposto sobre propriedade, valor do seguro contra incêndio, valor total mensal.
+Foram avaliados 1936758 Registro de Voos × 28 parâmetros
 
 # Exploratory Data Analysis (FCCD)
-Dentre as 18 perguntas levantadas pelo Anwar para estrurarmos uma análise completa, destaco as análises abaixo. Para uma avaliação completa, a leitura da análise do projeto é fundamental, uma vez que ele (e o respectivo storytelling) é estruturado para elucidar as principais conclusões a respeito do dataset.
 
-1. Por que avaliar o valor do aluguel como uma das principais variáveis a serem explicadas?
+1. Análise descritiva dos dados numéricos contínuos:
 
-Sabemos que a decisão de onde morar depende da análise do custo total com a moradia. Porém, o componente que mais pesa no valor total é o aluguel. Logo, faz mais sentido iniciar a análise por ele. Pela análise do histograma e pelas estatísticas descritivas, vemos que a variável de participação do valor do aluguel no valor total possui média de 0,76 e mediana de 0,76. Além disso, vemos que mais de 75% das observações possuem valor maior do que 67,47% (1º quartil). Ou seja, para a maior parte dos imóveis, o aluguel é o fator de maior peso no custo total.
+A análise descritiva dos parâmetros é uma etapa crucial na compreensão e interpretação dos dados relacionados ao desempenho de voos de companhias aéreas. Cada um desses parâmetros oferece insights valiosos sobre diferentes aspectos das operações de voo e do sistema de transporte aéreo como um todo. A tabela que agrega todos os parâmetros de resultados da análise oferece uma visão consolidada das principais estatísticas descritivas, permitindo uma fácil comparação e identificação de tendências e padrões nos dados. Essas informações são essenciais para tomada de decisões informadas, planejamento estratégico e melhoria contínua no setor de aviação.
 
 <p align="center">
-  <img src="https://github.com/cirolopes18/Exploratory-Data-Analysis-FCCD/assets/148280600/cd2b48dc-dce4-4145-a6b6-dd04ec9c3fb2">
+  <img src="">
 </p>
 
-2. O valor do aluguel é diferente entre as cidades da amostra (São Paulo, Rio de Janeiro, Belo Horizonte, Porto Alegre e Campinas)?
+2. Análise da Hora da Partida e Hora da Chegada Real e Hora da Partida Prevista. 
 
-Em um primeiro momento, vamos analisar comparativamente as cidades em um mesmo gráfico. Por premsisa, estamos ordenando as caixas de acordo com a ordem crescente das medianas dos valores de aluguel por cidade. 
-
-Desta forma, as cidades já aparecem ordenadas no eixo X, o que deixa claro duas questões: (i) São Paulo é a cidade que possui maior mediana no valor do aluguel (indícios de ser a cidade com aluguel mais caro do país na nossa amostra) e (ii) é a cidade que, na nossa amostra, possui os imóveis com maiores valores de aluguel. Ainda dentro da segunda questão, provavelmente são os outliers de São Paulo que tornam a visualização das informações pouco legível. Isto é, precisamos de mais alguma manipulação para gerar um insight mais legível e confiável.
+A análise dos dados da hora da partida e da chegada real em comparação com a hora da partida prevista é fundamental para entender e avaliar o desempenho das companhias aéreas e o funcionamento geral do sistema de transporte aéreo.
 
 <p align="center">
-  <img src="https://github.com/cirolopes18/Exploratory-Data-Analysis-FCCD/assets/148280600/2808781a-1340-4a33-a60e-31d7a5d0cdd1">
+  <img src="">
 </p>
 
-As perguntas que surgem são: (i) a média do aluguel em São Paulo é, de fato, maior do que as demais cidades? (ii) A média das demais cidades, com base em sua distribuição, são estatisticamente diferentes? Devemos responder as por meio de um teste de hipóteses. Qual cenário temos? Assumindo que a amostra de cada cidade é independente das demais, temos que realizar testes de hipóteses para médias, onde desconhecemos os desvios-padrão populacionais. Fazemos isso para toda comparação de valores, o que pode ser visto em detalhes no projeto
+3. Análise da Quantidade de Voos Cancelados e Desviados 
 
-3. O imóvel estar mobiliado influencia no valor do aluguel?
-
-Vendo pelo boxplot, observamos que para imóveis não-mobiliados, a dispersão dos valores de aluguel é maior. Apesar de a mediana do aluguel para móveis mobiliados ser maior (3500,00 vs. 2400,00), assim como a média (4882,29 vs. 3578,58), um teste de hipótese para médias de duas amostras é uma avaliação indispensável a ser feita.
+A quantidade de voos cancelados e desviados é um indicador importante da confiabilidade do serviço prestado pelas companhias aéreas. Voos cancelados e desviados podem causar grandes transtornos para os passageiros, afetando seus planos de viagem e compromissos.
 
 <p align="center">
-  <img src="https://github.com/cirolopes18/Exploratory-Data-Analysis-FCCD/assets/148280600/e2940b3b-24f7-427f-a23e-1eb5a17d2081">
+  <img src="">
 </p>
 
-4. Existe correlação entre área e valor do aluguel?
 
-No primeiro gráfico abaixo vemos o que os outliers de área fazem com o gráfico de dispersão fique pouco legível. No projeto, fizemos uma análise prévia para indicar, a priori, o fato de valores de área acima de 10000 serem potenciais outliers. Iremos, somente para fins de análise complementar, retirar esses pontos e ver o impacto sobre o gráfico de dispersão e sobre o índice de correlação de Pearson. Vale ressaltar que não é definitiva esta exclusão, pois, apesar de os valores serem discrepantes, ainda temos que confirmar que eles de fato se configuram como outliers.
+
+3. Análise da Quantidade de Voos por mês, por dia e por dia da semana
+
+
+A análise da quantidade de voos por mês, por dia e por dia da semana é fundamental para entender e avaliar o desempenho do sistema de transporte aéreo em termos de pontualidade e eficiência. O conjunto de dados fornecido pelo Departamento de Transportes dos Estados Unidos (DOT) e pela Bureau of Transportation Statistics (BTS) oferece uma visão abrangente do funcionamento dos voos domésticos operados por grandes companhias aéreas. Primeiramente, a análise mensal da quantidade de voos permite identificar padrões sazonais e tendências ao longo do ano.
 
 <p align="center">
-  <img src="https://github.com/cirolopes18/Exploratory-Data-Analysis-FCCD/assets/148280600/16f882dc-e4b9-43d0-992f-0da594b32145">
+  <img src="">
 </p>
 
 <p align="center">
-  <img src="https://github.com/cirolopes18/Exploratory-Data-Analysis-FCCD/assets/148280600/be519c9f-910b-4dd7-a56b-997d4f6c72e6">
+  <img src="">
 </p>
 
-Primeiro, mesmo com a exclusão parcial dos valores discrepantes, vemos que existe uma concentração de pontos nos seguintes intervalos no plano cartesiano: Aluguel = (0,15000), Area = (0, 1000). Qualquer afirmação sobre uma correlação linear positiva seria insuficiente se fosse feita somente após avaliação do gráfico. 
+<p align="center">
+  <img src="">
+</p>
 
-Segundo, com a exclusão parcial, o índice de correlação salta de 0,18 (correlação fraca) para 0,66 (correlação forte). Se olharmos para os valores discrepantes de aluguel no projeto, temos valores abaixo de 10.000,00 para imóveis com área maior do que 10000 m² (são todos apartamentos em prédios de, no mínimo, 3 andares; que apartamento é esse??). 
+4. Análise BoxPlot:
 
-Com ressalvas, há, portanto indícios de que, quanto maior a área do imóvel, maior o valor de aluguel a ser cobrado.
+O boxplot é uma ferramenta visual poderosa para analisar a distribuição e identificar padrões em um conjunto de dados. No contexto do tempo de voo e atrasos em voos domésticos operados por grandes transportadoras aéreas nos Estados Unidos, o uso de boxplots pode oferecer insights valiosos sobre a pontualidade e os possíveis fatores que contribuem para atrasos.
 
-# Comentários Finais
+**Tempo Real de Voo por Minuto, Tempo Previsto de Voo em Minuto, Tempo de Voo em Minuto:** Essas variáveis fornecem informações sobre a duração real, prevista e efetiva dos voos. O boxplot desses dados pode revelar a consistência entre o tempo previsto e o tempo real de voo, além de destacar eventuais outliers que indiquem voos excepcionalmente longos ou curtos.
 
-A primeira pergunta é mais para direcionar a análise. Isto é, qual é a minha variável-alvo? Qual é aquela variável que busco correlacionar com as demais? As demais perguntas envolvem hipóteses mais difundidas sobre o valor do aluguel, principalmente quando o morador está procurando um novo imóvel: será que escolho um imóvel mobiliado? Será que o valor do aluguel na cidade que estou olhando é maior do que nas outras cidades (uma proxy para começar a avaliar custo de vida na cidade)? Será que na cidade em questão o tamanho do imóvel impacta muito no valor do aluguel, de forma a limitar a escolha a imóveis menores? Enfim, as outras análises presentes no projeto concedem um conjunto mais robusto de insights para entendimento do cenário e tomada de decisão. 
+<p align="center">
+  <img src="">
+</p>
 
-Este projeto que fiz foi o vencedor do Hackathon! Comentários são mais do que bem-vindos. Vocês podem me encontrar no Linkedin ou e-mail. 
+**Atraso na Chegada e Partida em Minutos:** Os atrasos na chegada e partida são fatores críticos na experiência do passageiro e podem ter várias causas, desde problemas técnicos até congestionamentos nos aeroportos. O boxplot dessas variáveis permite identificar a magnitude e a frequência dos atrasos, bem como distinguir entre atrasos menores e atrasos significativos que podem afetar o planejamento de viagens.
 
-Abraços.
+<p align="center">
+  <img src="">
+</p>
+
+**Tempo Gasto Taxiando Após o Voo e Antes da Decolagem:** O tempo gasto em manobras de taxiamento pode contribuir para atrasos operacionais e impactar a eficiência geral do serviço de transporte aéreo. O boxplot desses dados pode destacar padrões de tempo de taxiamento e discrepâncias entre diferentes aeroportos ou companhias aéreas.
+
+<p align="center">
+  <img src="">
+</p>
+
+**Atrasos Causados pela Companhia Aérea, Clima e Sistema de Tráfego Aéreo:** Esses são os principais fatores que contribuem para atrasos em voos comerciais. Ao plotar os atrasos atribuídos a cada uma dessas categorias em um boxplot separado, é possível avaliar a eficácia das operações da companhia aérea, bem como o impacto das condições meteorológicas e do controle de tráfego aéreo nos atrasos de voo.
+
+<p align="center">
+  <img src="">
+</p>
+
+**Atrasos Causados por Questões de Segurança e Atrasos Causados por Chegada Tardia da Aeronave Anterior:
+
+<p align="center">
+  <img src="">
+</p>
+
+Ao analisar os boxplots desses dados em conjunto, podemos obter insights sobre a pontualidade do serviço, identificar áreas de melhoria operacional e compreender melhor os fatores externos que afetam o desempenho do transporte aéreo. Essa análise informada pode ajudar a otimizar os procedimentos operacionais, melhorar a eficiência e a confiabilidade dos voos e, em última análise, aprimorar a experiência de viagem para todos os envolvidos.
+
+5. Histograma: Ao construir um histograma , podemos visualizar a distribuição dos dados e identificar padrões e tendências significativas. 
+
+<p align="center">
+  <img src="">
+</p>
+
+6. Análise de Correlação
+
+A análise de correlação é uma ferramenta estatística poderosa utilizada para entender a relação entre duas variáveis. Quando lidamos com conjuntos de dados, é crucial compreender como essas variáveis estão interconectadas. No contexto do conjunto de dados fornecido pelo Departamento de Transporte dos Estados Unidos sobre o desempenho de voos domésticos operados por grandes transportadoras aéreas, a análise de correlação pode nos oferecer insights valiosos sobre as relações entre diferentes aspectos do desempenho de voos.
+
+**Correlação de Pearson:** A correlação de Pearson mede a relação linear entre duas variáveis contínuas. Ela assume que as variáveis seguem uma distribuição normal e que a relação entre elas é linear. Este método é ideal quando estamos interessados na força e na direção da relação linear entre as variáveis. 
+
+**Correlação de Spearman:** A correlação de Spearman, por outro lado, não requer a suposição de uma relação linear entre as variáveis. Em vez disso, ela avalia a relação monotônica entre duas variáveis, ou seja, se, à medida que uma variável aumenta, a outra também aumenta (ou diminui). Esta medida é mais robusta do que a correlação de Pearson quando a relação entre as variáveis não é linear ou quando os dados não seguem uma distribuição normal. 
+
+<p align="center">
+  <img src="">
+</p>
+
+**Comentário:**
+Entre ActualElapsedTime, CRSElapsedTime, AirTime e Distance: Estas variáveis estão relacionadas ao tempo de voo, então é importante entender como elas se correlacionam. Uma forte correlação entre elas pode indicar uma boa precisão no planejamento dos voos.
+Entre AirDelay e DepDelay: Estas variáveis estão relacionadas aos atrasos de voo, sendo crucial entender sua relação para identificar padrões e possíveis causas de atrasos.
+Portanto, ao aplicar tanto a correlação de Pearson quanto a de Spearman a este conjunto de dados, podemos obter uma compreensão abrangente das relações entre as diferentes medidas de desempenho de voo, ajudando assim a melhorar a eficiência e a confiabilidade dos serviços de transporte aéreo.
